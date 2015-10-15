@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JPA_Rahmen" default="jarBuilder" basedir=".">
+    <property file="build.properties" />
+	<target name="jarBuilder" description="JAR Archiv für Ivy erzeugen">
+    	<jar jarfile="${module.name}.jar"  basedir="bin" 
+    		 includes="de/kbs/${module.name}/**/*.class">
+		 	<manifest>    		  	
+	   			<attribute name="Implementation-Title" value="${module.name}"/>    		  	
+	   			<attribute name="Implementation-Vendor" value="DRV KBS"/>    		  	
+	   			<attribute name="Implementation-Vendor-Id" value="de.kbs"/>    		  	
+	   			<attribute name="Implementation-Version" value="${revision}"/>	       	
+			</manifest>	
+        </jar>	   	
+  	</target>
+</project>
