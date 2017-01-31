@@ -23,7 +23,8 @@ import de.kbs.SO1300JC.PWDecode;
 @EnableTransactionManagement
 public class SpringConfiguration  {
 
-	private static final String url			= "jdbc:db2://hostbkn:"+SpringValues.getDbPort()+"/"+SpringValues.getDbName();
+	private static final String url			= "jdbc:"+SpringValues.getDbms()+"://"+SpringValues.getAddr()+":"
+												+SpringValues.getDbPort()+"/"+SpringValues.getDbName();
 	private static final String user 		= SpringValues.getUser();
 	private static 		 String password 	= SpringValues.getPw();
 	private static final String driverClass	= SpringValues.getDriverClass();

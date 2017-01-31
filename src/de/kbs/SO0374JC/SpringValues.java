@@ -12,6 +12,8 @@ public class SpringValues {
 	private String		schema;
 	private String[] 	scanPackages;
 
+	private String		dbms;
+	private String		addr;
 	private String		driverClass; 		
 	private String 		dbPlatform;
 	private String 		showSQL;
@@ -23,6 +25,8 @@ public class SpringValues {
 		this.pw				= pw;
 		this.schema			= schema;
 		this.scanPackages	= scanPackages;
+		this.addr			= "hostbkn";
+		this.dbms			= "db2";
 		this.driverClass	= "com.ibm.db2.jcc.DB2DataSource";
 		this.dbPlatform		= "org.hibernate.dialect.DB2390Dialect";
 		this.showSQL		= "false";
@@ -40,10 +44,14 @@ public class SpringValues {
 	public static String getPw()				{ return springValues.pw;			}
 	public static String getSchema() 			{ return springValues.schema;		}
 	public static String[] getScanPackages()	{ return springValues.scanPackages;	}
+	public static String getAddr() 				{ return springValues.addr;			}
+	public static String getDbms() 				{ return springValues.dbms;			}
 	public static String getDriverClass() 		{ return springValues.driverClass;	}
 	public static String getDbPlatform()		{ return springValues.dbPlatform;	}
 	public static String getShowSQL() 			{ return springValues.showSQL;		}
 	
+	public void setDbms				(String dbms)			{ this.dbms = dbms;					}
+	public void setAddr				(String addr)			{ this.addr = addr;					}
 	public void setDriverClass		(String driverClass)	{ this.driverClass = driverClass;	}
 	public void setDatabasePlatform	(String dbPlatform) 	{ this.dbPlatform = dbPlatform;		}
 	public void setShowSQL			(String showSQL) 		{ this.showSQL = showSQL;			}
