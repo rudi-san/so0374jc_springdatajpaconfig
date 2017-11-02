@@ -1,4 +1,4 @@
-package de.kbs.SO0374JC.util;
+package de.kbs.so0374jc.util;
 
 import java.math.BigDecimal;
 import java.sql.Date;

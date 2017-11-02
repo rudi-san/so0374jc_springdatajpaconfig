@@ -5,4 +5,4 @@
  * @author rschneid
  *
  */
-package de.kbs.SO0374JC.util;
+package de.kbs.so0374jc;

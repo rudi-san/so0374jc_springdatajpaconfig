@@ -1,4 +1,4 @@
-package de.kbs.SO0374JC;
+package de.kbs.so0374jc;
 
 import java.util.ArrayList;
 import java.util.Properties;
@@ -38,7 +38,7 @@ public class SpringConfiguration  {
 	}
 	@SuppressWarnings("rawtypes")
 	public static AbstractApplicationContext initiate (Class[] localConfiguration) {
-		ArrayList<Class> classList			= new ArrayList<>();
+		ArrayList<Class> classList			= new ArrayList<Class>();
 		classList.add						(SpringConfiguration.class);
 		for (Class clazz : localConfiguration) 
 			classList.add						(clazz);

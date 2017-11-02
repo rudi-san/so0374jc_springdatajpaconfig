@@ -1,4 +1,4 @@
-package de.kbs.SO0374JC;
+package de.kbs.so0374jc;
 
 
 public class SpringValues {
