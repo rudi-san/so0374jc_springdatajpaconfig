@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="JPA_Rahmen" default="jarBuilder" basedir=".">
+<?xml version="1.0" encoding="utf-8"?>
+<project name="JPA_Rahmen" default="jarBuilder" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
     <property file="build.properties" />
 	<target name="jarBuilder" description="JAR Archiv für Ivy erzeugen">
     	<jar jarfile="${module.name}.jar"  basedir="bin" 
@@ -11,5 +11,15 @@
 	   			<attribute name="Implementation-Version" value="${revision}"/>	       	
 			</manifest>	
         </jar>	   	
+		<ivy:settings file="S:/Java/Apache Ivy/Settingdateien_Ivy_Artifactory/ivysettings_publish.xml" />
+		<ivy:makepom ivyfile="ivy.xml" pomfile="${module.name}.pom" />
+		<ivy:publish 	resolver="main" 
+						organisation="${organisation}" 
+						module="${module.name}"
+						revision="${revision}" 
+						srcivypattern="ivy.xml"
+						overwrite="true">
+			<artifacts pattern="[artifact].[ext]" />
+		</ivy:publish>
   	</target>
 </project>
