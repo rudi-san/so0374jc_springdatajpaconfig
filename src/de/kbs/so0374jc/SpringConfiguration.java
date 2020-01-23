@@ -24,7 +24,7 @@ import de.kbs.SO1300JC.PWDecode;
 public class SpringConfiguration  {
 
 	private static final String url			= "jdbc:"+SpringValues.getDbms()+"://"+SpringValues.getAddr()+":"
-												+SpringValues.getDbPort()+"/"+SpringValues.getDbName();
+												+SpringValues.getDbPort()+SpringValues.getSeparator()+SpringValues.getDbName();
 	private static final String user 		= SpringValues.getUser();
 	private static 		 String password 	= SpringValues.getPw();
 	private static final String driverClass	= SpringValues.getDriverClass();
@@ -92,7 +92,7 @@ public class SpringConfiguration  {
 	public HibernateJpaVendorAdapter hibernateJpaVendorAdapter () {
 		
 		HibernateJpaVendorAdapter vendorAdapter			= new HibernateJpaVendorAdapter();
-		vendorAdapter.setDatabase						(Database.DB2);
+		vendorAdapter.setDatabase						(Database.valueOf(SpringValues.getVendor()));
 		vendorAdapter.setGenerateDdl					(false);
 		if (SpringValues.getShowSQL().equalsIgnoreCase("true"))
 			vendorAdapter.setShowSql						(true);
